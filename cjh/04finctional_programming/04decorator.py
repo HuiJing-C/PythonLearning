@@ -54,11 +54,11 @@ if __name__ == '__main__':
     # 现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）
     # 本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator
     # 观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处
-    now2()  # call now2():2021-08-08
+    now2()  # call now2():\n2021-08-08
     # 把@log放到now2()函数的定义处，相当于执行了语句：now = log(now2)
 
     # 由于log()是一个decorator，返回一个函数，所以，原来的now2()函数仍然存在，只是现在同名的now变量指向了新的函数，于是调用now()将执行新函数，即在log()函数中返回的wrapper()函数
-    now3()  # execute now3():2021-08-08
+    now3()  # execute now3():\n2021-08-08
     # 层嵌套的decorator相比，3层嵌套的效果是这样的：now = log('execute')(now3)
     # 去看经过decorator装饰之后的函数，它们的name已经从原来的'now'变成了'wrapper',
     # 因为返回的那个wrapper()函数名字就是'wrapper'，所以，需要把原始函数的name等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。Python内置的functools.wraps就是干这个事的
