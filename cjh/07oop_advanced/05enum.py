@@ -25,7 +25,7 @@ if __name__ == '__main__':
     # 访问这些枚举类型可以有若干种方法
     print(Weekday.Sun)  # Weekday.Sun
     print(Weekday['Sun'])  # Weekday.Sun
-    print(Weekday(1))  # Weekday.Sun
+    print(Weekday(1))  # Weekday.Mon
     print(Weekday.Thu.value)  # 4
     print(Weekday.Mon == Weekday.Mon)  # True
     # Weekday(7)  # ValueError: 7 is not a valid Weekday
